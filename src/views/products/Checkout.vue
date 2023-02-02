@@ -493,11 +493,12 @@ export default {
             this.validSale = true
             const data = {
                 back_urls: {
-                    success: 'http://localhost:8080/verify/success/'+this.sell.address+'/'+this.shipMethodSelected+'/'+this.shippingCost,
-                    pending: 'http://localhost:8080/verify/pending',
-                    failure: 'http://localhost:8080/verify/failure'
+                    success: `${this.$url}/verify/success/`+this.sell.address+'/'+this.shipMethodSelected+'/'+this.shippingCost,
+                    pending: `${this.$url}/verify/pending`,
+                    failure: `${this.$url}/verify/failure`
                 },
                 items: this.items,
+                auto_return: 'approved'
             }
 			console.log(data);
             axios.post('https://api.mercadopago.com/checkout/preferences', data, {
