@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.alert{
+    width: 60%;
+    height: 40px;
+    border: 1px solid red;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+    margin: 0 auto;
+    background-color: rgba(255, 0, 0, 0.664);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.borde {
+    border-top: 1px solid rgba(0, 0, 0, 0.329);
+}
+.hoverClass {
+    width:30px;
+    height:30px;
+    font-size:12px;
+    border: 1px solid rgb(0 0 0/ 20%);
+    border-radius: 8px;
+    color: rgb(0 0 0/ 70%);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    transition: all ease-in-out .3s;
+}
+.hoverClass:hover{
+    border: 1px solid rgba(0, 0, 0, 0.37);
+    color:orange;
+
+    transition: all ease-in-out .3s;
+    -webkit-transition: all ease-in-out .3s;
+    -moz-transition: all ease-in-out .3s;
+    -ms-transition: all ease-in-out .3s;
+    -o-transition: all ease-in-out .3s;
+}
+
+.buttonLogin {
+    background: white;
+    border-radius: 8px; padding: 5px 20px;
+    border: 1px solid rgb(0 0 0/ 30%)!important;
+    transition: .3s ease-in-out all !important;
+    -webkit-transition: .3s ease-in-out all !important;
+    -moz-transition: .3s ease-in-out all !important;
+    -ms-transition: .3s ease-in-out all !important;
+    -o-transition: .3s ease-in-out all !important;
+}
+
+.buttonLogin:hover {
+    border: 1px solid orange !important;
+    color:rgb(0, 0, 0);
+    transition: .3s ease-in-out all !important;
+}
+
+.loginMargin{
+    margin-top: 9rem;
+}
+.productMargin{
+    margin-top: 5rem;
+}
+.categorySize {
+    font-size:54px;
+}
+.subcatSize{
+    font-size: 25px;
+}
+.catButton{
+    color: rgb(196, 196, 196);
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.301);
+    border-radius: 8px;
+    font-size: 13px;
+    padding: 10px 20px;
+    transition: .3s all ease-in-out;
+}
+
+.catButton:hover{
+    border: 1px solid rgb(255, 255, 255);
+    color: white;
+    transition: .3s all ease-in-out;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+.btnAdd {
+    border-radius: 8px !important;
+    color: white !important;
+    background:black !important;
+    transition: .3s all ease-in-out !important;
+    -webkit-border-radius: 8px !important;
+    -moz-border-radius: 8px !important;
+    -ms-border-radius: 8px !important;
+    -o-border-radius: 8px !important;
+    -webkit-transition: .3s all ease-in-out !important;
+    -moz-transition: .3s all ease-in-out !important;
+    -ms-transition: .3s all ease-in-out !important;
+    -o-transition: .3s all ease-in-out !important;
+} 
+
+.btnAdd:hover {
+    color: orange !important;
+    background:black !important;
+    transition: .3s all ease-in-out !important;
+    -webkit-transition: .3s all ease-in-out !important;
+    -moz-transition: .3s all ease-in-out !important;
+    -ms-transition: .3s all ease-in-out !important;
+    -o-transition: .3s all ease-in-out !important;
+}
+
+.textLink{
+    margin-left: 1.5rem;
+    color:rgba(34, 34, 34, 0.541);
+    transition: all .3s ease-in-out;
+    text-decoration: none;
+
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+}
+.textLink:hover{
+    text-decoration: none;
+    color:orange;
+    transition: all .3s ease-in-out;
+
+}
+
+.shipType {
+    display:flex; 
+    justify-content:left; 
+    width:60%; 
+    padding:20px; 
+    gap:10px; 
+    flex-direction:column;
+}
+.marginFix {
+    margin-top: 7rem !important;
+}
+
+.notificationContainer{
+    position: fixed;
+    z-index: 99999;
+    height: fit-content;
+    max-width: fit-content;
+    min-width: 300px;
+    padding: 15px 14px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(80, 80, 80, 0.374);
+    box-shadow: 6px 6px 10px rgba(31, 31, 31, 0.2);
+    border-radius: 8px;
+    top: -400px;
+    transition:all ease-in-out .3s;
+    -webkit-transition:all ease-in-out .3s;
+    -moz-transition:all ease-in-out .3s;
+    -ms-transition:all ease-in-out .3s;
+    -o-transition:all ease-in-out .3s;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+.actived{
+    top: 60px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transition:all ease-in-out .3s;
+} 
+
+@media (max-width: 991px){
+    .loginMargin{
+        margin-top: 7rem;
+    }
+    .productMargin{
+        margin-top: 3rem;
+    }
+    .categorySize {
+        font-size: 28px !important;
+    }
+    .subcatSize{
+        font-size: 22px !important;
+    }
+    .shipType {
+        flex-direction:column;
+        width:100%; 
+    }
+    .marginFix {
+        margin-top: 1rem !important;
+        
+    }
+}
