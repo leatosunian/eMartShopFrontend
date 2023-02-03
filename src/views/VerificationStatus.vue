@@ -138,7 +138,9 @@ export default {
                 return // no se hace la venta //
               }
               if(data.length === 0){
-                this.createSale()
+                setTimeout(() => {
+                    this.createSale()
+                }, 1000);
               }
             }).catch( error => {
               console.log(error.response.data.msg)
