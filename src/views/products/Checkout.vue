@@ -493,9 +493,9 @@ export default {
             this.validSale = true
             const data = {
                 back_urls: {
-                    success: `${this.$url}/verify/success/`+this.sell.address+'/'+this.shipMethodSelected+'/'+this.shippingCost,
-                    pending: `${this.$url}/verify/pending`,
-                    failure: `${this.$url}/verify/failure`
+                    success: `${this.$frontendURL}/verify/success/`+this.sell.address+'/'+this.shipMethodSelected+'/'+this.shippingCost,
+                    pending: `${this.$frontendURL}/verify/pending`,
+                    failure: `${this.$frontendURL}/verify/failure`
                 },
                 items: this.items
             }
