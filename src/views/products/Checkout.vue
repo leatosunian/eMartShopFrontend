@@ -497,7 +497,7 @@ export default {
                     pending: `${this.$url}/verify/pending`,
                     failure: `${this.$url}/verify/failure`
                 },
-                items: this.items,
+                items: this.items
             }
 			console.log(data);
             axios.post('https://api.mercadopago.com/checkout/preferences', data, {
