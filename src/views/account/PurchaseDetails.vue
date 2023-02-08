@@ -150,7 +150,14 @@ export default {
       },
 
       getPurchaseData(){
+        var loader = this.$loading.show({
+          container: this.fullPage ? null : this.$refs.formContainer,
+          canCancel: false,
+          color: "orange",
+          opacity: 1
+        });
         if(this.$route.params.id.length < 15){
+          loader.hide()
           return
         }
         const token = localStorage.getItem('token_shopuser')
@@ -167,8 +174,10 @@ export default {
           this.products = data.saleDetails
           console.log(this.saleData);
           console.log(this.products);
+          loader.hide()
         }).catch( error => {
           console.log(error.response.data.msg)
+          loader.hide()
         })
       }
     },

@@ -110,6 +110,12 @@ export default {
             return currencyFormatter.format(price, { code: 'ARS' });
         },
         getOrders(){
+            var loader = this.$loading.show({
+                container: this.fullPage ? null : this.$refs.formContainer,
+                canCancel: false,
+                color: "orange",
+                opacity: 1
+            });
             const userId = JSON.parse(localStorage.getItem('data_shopuser'))[1]
             const token = localStorage.getItem('token_shopuser')
             console.log(userId);
@@ -122,9 +128,10 @@ export default {
                 const {data} = response
                 this.orders = data
                 console.log(this.orders)    
-
+                loader.hide()
             }).catch( error => {
                 console.log(error.response.data.msg)
+                loader.hide()
             })
         }
     }

@@ -196,19 +196,26 @@ export default {
   },
   methods: {
     getFourProducts(){
+      var loader = this.$loading.show({
+        container: this.fullPage ? null : this.$refs.formContainer,
+        canCancel: false,
+        color: "orange",
+        opacity: 1
+      });
       axios.get(this.$url+'/public/getLatestProducts', {
-            headers: {
-              "Content-Type": 'application/json',
-            }
-            }).then((response) => {
-              const {data} = response
-              this.fourProducts = data
-              console.log(this.fourProducts)
-            }).catch( error => {
-              console.log(error.response.data.msg)
-              this.msm_error = error.response.data.msg
-               
-            })
+        headers: {
+          "Content-Type": 'application/json',
+        }
+        }).then((response) => {
+          const {data} = response
+          this.fourProducts = data
+          console.log(this.fourProducts)
+          loader.hide()
+        }).catch( error => {
+          console.log(error.response.data.msg)
+          this.msm_error = error.response.data.msg
+          loader.hide()
+        })
     },
     getMostWantedProducts(){
       axios.get(this.$url+'/public/getMostWantedProducts', {

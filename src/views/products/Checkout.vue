@@ -384,6 +384,12 @@ export default {
 			console.log(this.shipMethodSelected);
 		},
         getCart(){
+            var loader = this.$loading.show({
+                container: this.fullPage ? null : this.$refs.formContainer,
+                canCancel: false,
+                color: "orange",
+                opacity: 1
+            });            
             const token = localStorage.getItem('token_shopuser')
             const getUser = JSON.parse(localStorage.getItem('data_shopuser'))
             const user = getUser[1]
@@ -399,7 +405,8 @@ export default {
                 this.cart = data
                 console.log(this.cart);
                 this.loading = false
-                    
+                loader.hide()
+
                 for(const item of data){
                     const subtotal = item.product.price * item.amountOfProducts
                     this.total = this.total + subtotal
@@ -412,15 +419,11 @@ export default {
                         unit_price: item.product.price, 
                     })                    
                 }
-				
                 this.getShippingMethods()
-				console.log(this.total);
-				
-				
-
             }).catch( error => {
                 console.log(error.response.data.msg)
                 this.msm_error = error.response.data.msg
+                loader.hide()
             })  
         },
         priceConverter(price){

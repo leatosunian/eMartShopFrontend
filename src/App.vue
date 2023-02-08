@@ -5,7 +5,11 @@
     <Footer/>
   </div>
 </template>
-
+<style>
+router-view{
+  background-color: white !important;
+}
+</style>
 <script>
 import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';

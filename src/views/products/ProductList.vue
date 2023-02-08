@@ -523,7 +523,8 @@ export default {
       categories: [],
       activeCat: '',
       activeSubcat: '',
-      loading: true
+      loading: true,
+      fullPage: true
     }
   },
   mounted(){
@@ -541,6 +542,14 @@ export default {
     window.scrollTo(0, 0)
   },
   beforeMount(){
+
+    var loader = this.$loading.show({
+      container: this.fullPage ? null : this.$refs.formContainer,
+      canCancel: false,
+      color: "orange",
+      opacity: 1
+    });
+
     axios.get(this.$url+'/public/getAllProducts', {
       headers: {
         "Content-Type": 'application/json',
@@ -560,14 +569,15 @@ export default {
         if(this.$route.query.filter){
           this.filterBySearch()
         }
-       
+        loader.hide()
         
       }).catch( error => {
         console.log(error.response.data.msg)
         this.msm_error = error.response.data.msg
-          
+        loader.hide()
       })
     this.getCategories()
+
   },
 
   methods: {
@@ -597,6 +607,7 @@ export default {
           "Content-Type": 'application/json',
         }
         }).then((response) => {
+          
           const {data} = response
           this.categories = data
           if(this.$route.query.subcategory && this.$route.query.category){

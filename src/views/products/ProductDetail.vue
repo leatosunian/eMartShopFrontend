@@ -283,6 +283,12 @@ export default {
         window.scrollTo(0, 0)
       },
       getProductData(){
+        var loader = this.$loading.show({
+          container: this.fullPage ? null : this.$refs.formContainer,
+          canCancel: false,
+          color: "orange",
+          opacity: 1
+        });
         axios.get(this.$url+'/public/getoneproduct/'+this.$route.params.slug, {
         headers: {
           "Content-Type": 'application/json',
@@ -299,9 +305,11 @@ export default {
           this.userData = user
           this.cartObj.product = this.product[0]._id
           this.cartObj.client = this.userData[1]
+          loader.hide()
         }).catch( error => {
           console.log(error.response.data.msg)
           this.msm_error = error.response.data.msg
+          loader.hide()
         })
       },
       priceConverter(price){

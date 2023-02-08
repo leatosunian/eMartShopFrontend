@@ -150,6 +150,12 @@ export default {
     },
     methods: {
         getCart(){
+            var loader = this.$loading.show({
+                container: this.fullPage ? null : this.$refs.formContainer,
+                canCancel: false,
+                color: "orange",
+                opacity: 1
+            });
             const token = localStorage.getItem('token_shopuser')
             const getUser = JSON.parse(localStorage.getItem('data_shopuser'))
             const user = getUser[1]
@@ -165,14 +171,16 @@ export default {
                 this.cart = data
                 console.log(this.cart);
                 this.loading = false
-            for(const item of data){
-                const subtotal = item.product.price * item.amountOfProducts
-                this.total = this.total + subtotal
-            }
+                loader.hide()
+                for(const item of data){
+                    const subtotal = item.product.price * item.amountOfProducts
+                    this.total = this.total + subtotal
+                }
 
             }).catch( error => {
-            console.log(error.response.data.msg)
-            this.msm_error = error.response.data.msg
+                console.log(error.response.data.msg)
+                this.msm_error = error.response.data.msg
+                loader.hide()
             })  
         },
         priceConverter(price){
