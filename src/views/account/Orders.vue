@@ -9,7 +9,7 @@
                     <li class="breadcrumb-item active">Mis pedidos</li>
                 </ol>
                 <!-- Hero Content-->
-                <div class="pb-5 text-center hero-content">
+                <div class="pb-2 text-center hero-content">
                     <h1 class="hero-heading">Mis pedidos</h1>
                     <div class="row">   
                     <div class="col-xl-8 offset-xl-2"><p class="lead">Este es el historial de tus compras</p></div>
@@ -26,16 +26,16 @@
                         <table class="table table-borderless table-hover table-responsive-md table-responsive-sm" style="overflow-x:scroll!important;">
                             <thead class="bg-light">
                                 <tr>
-                                    <th class="py-4 text-sm text-uppercase">Pedido</th>
-                                    <th class="py-4 text-sm text-uppercase">Fecha de compra</th>
-                                    <th class="py-4 text-sm text-uppercase">Total</th>
-                                    <th class="py-4 text-sm text-uppercase">Estado</th>
-                                    <th class="py-4 text-sm text-uppercase"></th>
+                                    <th class="py-4 text-sm text-uppercase" style="font-size:13px;">Pedido</th>
+                                    <th class="py-4 text-sm text-uppercase" style="font-size:13px;">Fecha de compra</th>
+                                    <th class="py-4 text-sm text-uppercase" style="font-size:13px;">Total</th>
+                                    <th class="py-4 text-sm text-uppercase" style="font-size:13px;">Estado</th>
+                                    <th class="py-4 text-sm text-uppercase" style="font-size:13px;"></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr v-for="item in orders">
-                                    <th class="py-4 align-middle"># {{item.orderNumber}}</th>
+                                    <th class="py-4 align-middle">#{{item.orderNumber}}</th>
                                     <td class="py-4 align-middle">{{item.day}}/{{item.month}}/{{item.year}}</td>
                                     <td class="py-4 align-middle">{{priceConverter(item.total)}}</td>
                                     <td class="py-4 align-middle" v-if="item.statusStr === 'En preparación'" ><span class="p-2 badge text-uppercase badge-info-light">En preparación</span></td>
@@ -64,7 +64,7 @@
                     </div>
 
                     <!-- Customer Sidebar-->
-                    <div class="mb-5 col-xl-3 col-lg-4 borderCard">
+                    <div class="mb-5 col-xl-3 col-lg-4 ">
                         <AccountSidebar/>
                     </div>
                     <!-- /Customer Sidebar-->

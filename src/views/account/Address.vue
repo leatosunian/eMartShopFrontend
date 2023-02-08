@@ -13,11 +13,11 @@
           <ol class="breadcrumb justify-content-center">
             <li class="breadcrumb-item"><router-link to="/">Inicio</router-link></li>
             <li class="breadcrumb-item"><a >Perfil</a></li>
-            <li class="breadcrumb-item active">Domicilio</li>
+            <li class="breadcrumb-item active">Mis datos</li>
           </ol>
           <!-- Hero Content-->
-          <div class="pb-5 text-center hero-content">
-            <h1 class="hero-heading">Datos de envío</h1>
+          <div class="pb-2 text-center hero-content">
+            <h1 class="hero-heading">Mi perfil</h1>
           </div>
         </div>
         </section>
@@ -29,7 +29,7 @@
                 <div class="block">
                   <!-- Invoice Address-->
                   <div class="block-header">
-                    <h6 class="mb-0 text-uppercase">Agregar domicilio</h6>
+                    <h6 class="mb-0 text-uppercase">Datos de envío</h6>
                   </div>
                   <div class="block-body">
                     <div class="row">
@@ -113,9 +113,9 @@
                     
                   </div>
 
-                  <div class="card">
+                  <div class="card" v-if="addresses.length === 0">
                     <div class="card-body">
-                      <div class="row" v-if="addresses.length === 0">
+                      <div class="row">
                         <div class="text-center col-12">
                           <img src="../../../public/assets/icons/map.png" style="width:70px; height:70px; margin-bottom:20px" alt="">
                           <h3 style="font-size:24px;">Aún no tenés domicilios.</h3>

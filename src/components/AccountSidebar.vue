@@ -2,24 +2,22 @@
     <div>
         <!-- Customer Sidebar-->
         
-            <div class=" customer-sidebar card"> 
-                <div class="customer-profile">
-                    <a class="d-inline-block" href="#">
-                        <img class="shadow img-fluid rounded-circle customer-image" src="../../public/assets/icons/default-profile.png" alt="">
-                    </a>
+            <div class="customer-sidebar borderCard" > 
+                <div class="customer-profile" style="background:white!important; margin-bottom:17px;">
+                        <img class="shadow img-fluid rounded-circle customer-image" src="@/assets/defaultprofile.png" alt="">
                 <h5>{{profile.name}}</h5>
+                <span style="color:gray">Cliente</span>
                 </div>
                 <nav class="list-group customer-nav">
-                    <a class="list-group-item d-flex justify-content-between align-items-center text-decoration-none" href="customer-orders.html">
+                    <router-link class="list-group-item d-flex justify-content-between align-items-center text-decoration-none" active-class="active" to="/profile/address">
                         <span>
                             <svg class="svg-icon svg-icon-heavy me-2">
-                                <use xlink:href="#paper-bag-1"> </use>
+                                <use xlink:href="#navigation-map-1"> </use>
                             </svg>
-                            Profile
+                            Mi perfil
                         </span>
-                        <!-- <div class="px-3 badge rounded-pill bg-dark fw-normal">5</div> -->
-                    </a>
-                    <router-link class="list-group-item d-flex justify-content-between align-items-center text-decoration-none" to="/profile/orders">
+                    </router-link>
+                    <router-link class="list-group-item d-flex justify-content-between align-items-center text-decoration-none" active-class="active" to="/profile/orders">
                         <span>
                             <svg class="svg-icon svg-icon-heavy me-2">
                                 <use xlink:href="#male-user-1"> </use>
@@ -27,14 +25,7 @@
                             Mis pedidos
                         </span>
                     </router-link>
-                    <router-link class="list-group-item d-flex justify-content-between align-items-center text-decoration-none" active-class="active" to="/profile/address">
-                        <span>
-                            <svg class="svg-icon svg-icon-heavy me-2">
-                                <use xlink:href="#navigation-map-1"> </use>
-                            </svg>
-                            Domicilios de envío
-                        </span>
-                    </router-link>
+
                     <a v-on:click="logOut()" class="list-group-item d-flex justify-content-between align-items-center text-decoration-none" style="cursor:pointer;">
                         <span>
                             <svg class="svg-icon svg-icon-heavy me-2">
@@ -50,16 +41,38 @@
 </template>
 
 <style>
+.borderCard{
+    border-radius: 8px;
+    border: 1px solid rgb(214, 214, 214);
+    padding-top: 30px !important;
+    padding-bottom: 4px !important;
+    margin-top: 0px;
+}
 .rounded-circle {
     border-radius: 0 !important;
 }
-.borderCard{
-    border-radius: 8px;
-    border: 1px solid rgba(88, 88, 88, 0.445);
-}
+
 .customer-profile {
     padding: 0 !important;
+    
 }
+.customer-image{
+    width: 140px;
+    height: 135px;
+    border-radius: 20% !important;
+}
+
+.customer-nav .list-group-item{
+    border: none !important;
+    border-top: 1px solid #e9ecef !important;
+}
+
+@media (max-width:991px) {
+    .borderCard{
+        margin-top: 50px;
+    }
+}
+
 </style>
 
 <script>

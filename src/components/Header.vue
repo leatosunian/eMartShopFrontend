@@ -108,7 +108,7 @@
                         <span class="text-sm ms-2 ms-lg-0 text-uppercase fw-bold d-none d-sm-inline d-lg-none">&nbsp; Iniciar Sesión</span>
                       </router-link>
 
-                      <router-link to="/profile/orders" v-if="loggedIn" class="navbar-icon-link mobile" >
+                      <router-link to="/profile/address" v-if="loggedIn" class="navbar-icon-link mobile" >
                         <img src="/assets/icons/user.png" style="width: 25px;" />
                         <span class="text-sm ms-2 ms-lg-0 text-uppercase fw-bold d-none d-sm-inline d-lg-none">&nbsp; Mi perfil</span>
                       </router-link>
@@ -118,7 +118,7 @@
                         <img src="/assets/icons/user.png" style="width: 25px;" />
                         <span class="text-sm ms-2 ms-lg-0 text-uppercase fw-bold d-none d-sm-inline dropdown-toggle" data-bs-target="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&nbsp; {{username.split(' ')[0]}}</span>
                         <div class="dropdown-menu dropdown-menu-animated" aria-labelledby="categoryDropdownMenuLink" style="left:-20px!important; bottom:45px!important; ">
-                          <a class="dropdown-item" style="background-color:white;" href="">Mi perfil</a>
+                          <router-link class="dropdown-item" style="background-color:white;" to="/profile/address">Mi perfil</router-link>
                           <router-link class="dropdown-item" style="background-color:white;" to="/profile/orders" >Mis pedidos</router-link>
                           <a class="dropdown-item" style="background-color:white;" v-on:click="logOut()">Cerrar Sesión</a>
                         </div>
@@ -252,6 +252,14 @@
   padding-left: 5.6rem !important;
   padding-right: 5.6rem !important;
 }
+
+@media (max-width:1300px){
+  .navbar {
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+  }
+}
+
 @media (max-width:991px) {
   .mobile {
     display: flex !important;
@@ -259,15 +267,16 @@
   .desktop {
     display: none !important;
   }
+  .navbar {
+    padding-left: .5rem !important;
+    padding-right: 0 !important;
+  }
 }
 @media (max-width:768px) {
   .megamenu {
     min-width: 400px !important;
   }
-  .navbar {
-    padding-left: .5rem !important;
-    padding-right: 0 !important;
-  }
+
   .logoImg{
     width: 94px;
     margin-bottom: 2px;
