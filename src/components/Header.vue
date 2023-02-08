@@ -41,7 +41,9 @@
             <router-link class="navbar-brand"  style="heigth:fit-content!important;" to="/">
               <img src="@/assets/emart0000.png" class="logoImg" alt="">
             </router-link>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <img src="@/assets/menu.png" style="width: 20px; margin:auto" alt="">
+            </button>
             <!-- Navbar Collapse -->
             <div class="collapse navbar-collapse" id="navbarCollapse">
               <ul class="mx-auto navbar-nav">
@@ -63,8 +65,9 @@
                             <!-- Megamenu list-->
                             <h6 class="text-uppercase" style="margin-bottom:12px;">{{item.category.name}}</h6>
                             <ul class="megamenu-list list-unstyled">
-                              <li class="megamenu-list-item" v-for="subitem in item.subcategories"><a class="megamenu-list-link" href="about.html"> {{ subitem.name }} </a></li>
-                              
+                              <li class="megamenu-list-item" v-for="subitem in item.subcategories">
+                                <a class="megamenu-list-link" style="cursor:pointer;" v-on:click="redirectToSubcategory(subitem)"> {{ subitem.name }} </a>
+                              </li>
                             </ul>
                             <!-- Megamenu list-->
                           </div>
@@ -246,8 +249,8 @@
   margin-bottom: 0px;
 }
 .navbar {
-  padding-left: 5rem !important;
-  padding-right: 5rem !important;
+  padding-left: 5.6rem !important;
+  padding-right: 5.6rem !important;
 }
 @media (max-width:991px) {
   .mobile {
@@ -263,7 +266,7 @@
   }
   .navbar {
     padding-left: .5rem !important;
-    padding-right: .5rem !important;
+    padding-right: 0 !important;
   }
   .logoImg{
     width: 94px;
@@ -304,6 +307,11 @@ export default {
     
   },
   methods: {
+    redirectToSubcategory(subitem){
+      console.log(subitem.categoryName);
+      console.log(subitem.name);
+      this.$router.push({name: 'products', query:{ category: subitem.categoryName, subcategory: subitem.name } })
+    },
     search(){
       this.$router.push({
         name: 'products',

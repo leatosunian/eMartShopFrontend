@@ -139,10 +139,7 @@
 
                     <template v-if="item.category._id == activeCat">
                       <div>
-                        <div
-                          class="mb-2 sidebar-menu-item"
-                          
-                        >
+                        <div class="mb-2 sidebar-menu-item">
                           <a class="nav-link active" href="#!">
                             <div class="row">
                                 <div class="col"><a style="cursor:pointer;">{{item.category.name}}</a></div>
@@ -158,8 +155,8 @@
                         <div class="collapse" :id="'subcategories'+item.category._id">
                           <div class="nav nav-pills flex-column ms-3">
                             <a style="cursor:pointer;" class="mb-2 nav-link" v-bind:class="{'subcatActive': subItem.name == activeSubcat}" v-for="subItem in item.subcategories" v-on:click="redirectToSubcategory(subItem, item)" >{{subItem.name}}</a>
+                          </div>
                         </div>
-                      </div>
                       </div>
                     </template>
 
@@ -657,11 +654,14 @@ export default {
   watch:{
     $route(to, from){
       if(!this.$route.query.subcategory && !this.$route.query.category){
-          this.allProducts = this.products
+        this.allProducts = this.products
+      }
+      if(this.$route.query.subcategory && this.$route.query.category){
+        this.getSubcategoryProducts()
       }
       if(this.$route.query.filter){
-          this.filterBySearch()
-        }
+        this.filterBySearch()
+      }
     },
     minRange: function(value) {
       this.allProducts = this.products.filter(item => item.price >= value)
