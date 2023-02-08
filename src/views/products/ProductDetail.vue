@@ -1,5 +1,5 @@
 <template>
-    <div style="background: #f3f3f3;" class="pb-5" >
+    <div style="background: white;" class="pb-5" >
       <div class="notificationContainer" v-bind:class=" {actived: added} ">
         <div style="display:flex; justify-content:center; height:70%; align-items:center; gap:12px">
           <img src="@/assets/correct.png" alt="" style="width:35px;">
@@ -91,9 +91,9 @@
                   <div style="display:flex; flex-direction:row; gap:10px;">
                     <template v-for="variant in variants" >
                       <div v-if="variant.stock > 0 " class="hoverClass" v-on:click="getVariant(variant._id)" :id="'variant_'+variant._id">
-                        <label v-on:click="getVariant(variant._id)" :for="'variant_'+variant._id"  >{{variant.variant}}
+                        <span v-on:click="getVariant(variant._id)" :for="'variant_'+variant._id"  >{{variant.variant}}
                           <input  class="input-invisible" type="radio" :value="variant._id" name="size" value="value_0" id="size_0" required>
-                        </label>
+                        </span>
                       </div>
                     </template>
                   </div>
@@ -235,6 +235,10 @@
   
     color: orange;
     border: 1px solid orange;
+  }
+
+  .owl-theme.owl-dots-modern .owl-dots .owl-dot.active span{
+    background-color: orange!important;
   }
 </style>
 
