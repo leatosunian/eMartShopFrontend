@@ -150,13 +150,20 @@ export default {
     },
     methods: {
         getCart(){
-            var loader = this.$loading.show({
-                container: this.fullPage ? null : this.$refs.formContainer,
-                canCancel: false,
-                color: "orange",
-                opacity: 1
-            });
             const token = localStorage.getItem('token_shopuser')
+            if(token){
+                var loader = this.$loading.show({
+                    container: this.fullPage ? null : this.$refs.formContainer,
+                    canCancel: false,
+                    color: "orange",
+                    opacity: 1
+                });
+            }
+            if(!token){
+                this.loading = false
+            }
+
+            
             const getUser = JSON.parse(localStorage.getItem('data_shopuser'))
             const user = getUser[1]
             console.log(user);

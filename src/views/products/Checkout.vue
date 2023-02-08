@@ -383,14 +383,16 @@ export default {
 			this.shipMethodSelected = e.target.id
 			console.log(this.shipMethodSelected);
 		},
-        getCart(){
-            var loader = this.$loading.show({
-                container: this.fullPage ? null : this.$refs.formContainer,
-                canCancel: false,
-                color: "orange",
-                opacity: 1
-            });            
+        getCart(){          
             const token = localStorage.getItem('token_shopuser')
+            if(token){
+                var loader = this.$loading.show({
+                    container: this.fullPage ? null : this.$refs.formContainer,
+                    canCancel: false,
+                    color: "orange",
+                    opacity: 1
+                });
+            }
             const getUser = JSON.parse(localStorage.getItem('data_shopuser'))
             const user = getUser[1]
             console.log(user);
