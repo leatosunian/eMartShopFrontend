@@ -290,6 +290,7 @@ export default {
     }
   },
   beforeMount(){
+    this.getCategories()
     const token = localStorage.getItem('token_shopuser')
     if(token === null){
       this.loggedIn = false
@@ -299,8 +300,8 @@ export default {
       this.username = username[0];
     }
     this.getCart()
-    this.created(),
-    this.getCategories()
+    this.created()
+    
   },
   methods: {
     search(){
