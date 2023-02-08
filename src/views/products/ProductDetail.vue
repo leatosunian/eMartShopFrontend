@@ -298,6 +298,7 @@ export default {
           this.product = data.product
           this.gallery = data.gallery
           this.variants = data.variants
+          loader.hide()
           initCarousel.initGallery()
           initCarousel.initGlight()
           this.getRelatedProducts(this.product[0].category)
@@ -305,11 +306,11 @@ export default {
           this.userData = user
           this.cartObj.product = this.product[0]._id
           this.cartObj.client = this.userData[1]
-          loader.hide()
         }).catch( error => {
+          loader.hide()
           console.log(error.response.data.msg)
           this.msm_error = error.response.data.msg
-          loader.hide()
+          
         })
       },
       priceConverter(price){
