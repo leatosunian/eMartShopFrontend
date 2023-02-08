@@ -308,9 +308,7 @@ export default {
           this.cartObj.client = this.userData[1]
         }).catch( error => {
           loader.hide()
-          console.log(error.response.data.msg)
           this.msm_error = error.response.data.msg
-          
         })
       },
       priceConverter(price){
