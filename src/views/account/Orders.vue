@@ -115,6 +115,7 @@ export default {
                 canCancel: false,
                 color: "orange",
                 opacity: 1
+                
             });
             const userId = JSON.parse(localStorage.getItem('data_shopuser'))[1]
             const token = localStorage.getItem('token_shopuser')
