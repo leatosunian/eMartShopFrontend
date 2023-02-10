@@ -209,10 +209,8 @@ export default {
         }).then((response) => {
           const {data} = response
           this.fourProducts = data
-          console.log(this.fourProducts)
           loader.hide()
         }).catch( error => {
-          console.log(error.response.data.msg)
           this.msm_error = error.response.data.msg
           loader.hide()
         })
@@ -225,8 +223,6 @@ export default {
             }).then((response) => {
               const {data} = response
               this.mostWantedProducts = data
-              console.log(this.mostWantedProducts.length)
-              console.log(this.mostWantedProducts)
             }).catch( error => {
               console.log(error.response.data.msg)
               this.msm_error = error.response.data.msg

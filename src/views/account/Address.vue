@@ -188,7 +188,6 @@ export default {
       saveAddress(){
         const userId = JSON.parse(localStorage.getItem('data_shopuser'))[1]
         const token = localStorage.getItem('token_shopuser')
-        console.log(this.address);
         axios.put(this.$url+'/profile/saveAddress/'+userId, this.address, {
             headers: {
               "Content-Type": 'application/json',
@@ -196,7 +195,6 @@ export default {
             }
             }).then((response) => {
               const {data} = response
-              console.log(data)
               if(data.msg){
                 this.valid = false
                 this.msm_error = data.msg
@@ -221,7 +219,6 @@ export default {
         });
         const userId = JSON.parse(localStorage.getItem('data_shopuser'))[1]
         const token = localStorage.getItem('token_shopuser')
-        console.log(userId);
         axios.get(this.$url+'/profile/getAddress/'+userId, {
             headers: {
               "Content-Type": 'application/json',
@@ -230,7 +227,6 @@ export default {
             }).then((response) => {
               const {data} = response
               this.addresses = data
-              console.log(this.addresses)    
               loader.hide()
 
             }).catch( error => {

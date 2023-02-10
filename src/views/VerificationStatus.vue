@@ -99,8 +99,6 @@ export default {
             this.validSale = false
             this.isAddress = true
         }
-        console.log(this.address);
-        console.log(this.$route.params.shipMethod);
         
      },
     methods: {
@@ -114,7 +112,6 @@ export default {
             }).then((response) => {
               const {data} = response
               this.payment = data
-              console.log(this.payment.status);
               if(this.payment.status === 'approved'){
                 this.validateSale(this.payment_id)
               }
@@ -125,7 +122,6 @@ export default {
 
         validateSale(payment_id){
             const token = localStorage.getItem('token_shopuser')
-            console.log(payment_id);
             axios.get(this.$url+'/sales/get/'+payment_id, {
                 headers: {
                     "Content-Type": 'application/json',
@@ -133,7 +129,6 @@ export default {
                 }
             }).then((response) => {
               const {data} = response
-              console.log(data);
               if(data.length >= 1){
                 return // no se hace la venta //
               }
@@ -160,7 +155,6 @@ export default {
                 this.total = 0
                 const {data} = response
                 this.cart = data
-                console.log(this.cart);
 
                 for(const item of data){
                     const subtotal = item.product.price * item.amountOfProducts
@@ -178,8 +172,6 @@ export default {
                 this.sale.status = this.payment.status
                 this.sale.total = this.total
                 this.sale.client = user
-                console.log(this.sale);
-                console.log(this.saleDetail);
                
             }).catch( error => {
                 console.log(error.response.data.msg)
@@ -198,7 +190,6 @@ export default {
                 }
             }).then((response) => {
               const {data} = response
-              console.log(data);
               this.$socket.emit('sendCart', true)
               this.validSale = true
               setTimeout(() => {

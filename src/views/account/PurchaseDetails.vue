@@ -168,15 +168,11 @@ export default {
             }
         }).then((response) => {
           const {data} = response
-          console.log(data);
           this.address = data.sale[0].address
           this.saleData = data.sale[0]
           this.products = data.saleDetails
-          console.log(this.saleData);
-          console.log(this.products);
           loader.hide()
         }).catch( error => {
-          console.log(error.response.data.msg)
           loader.hide()
         })
       }

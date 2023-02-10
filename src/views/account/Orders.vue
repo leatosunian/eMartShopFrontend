@@ -119,7 +119,6 @@ export default {
             });
             const userId = JSON.parse(localStorage.getItem('data_shopuser'))[1]
             const token = localStorage.getItem('token_shopuser')
-            console.log(userId);
             axios.get(this.$url+'/profile/orders/'+userId, {
                 headers: {
                     "Content-Type": 'application/json',
@@ -128,10 +127,8 @@ export default {
             }).then((response) => {
                 const {data} = response
                 this.orders = data
-                console.log(this.orders)    
                 loader.hide()
             }).catch( error => {
-                console.log(error.response.data.msg)
                 loader.hide()
             })
         }

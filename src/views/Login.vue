@@ -164,7 +164,6 @@ export default {
             }).then((response) => {
               const {data} = response
               this.valid= true
-              console.log(data)
             }).catch( error => {
               console.log(error.response.data.msg)
               this.msm_error = error.response.data.msg
@@ -180,7 +179,6 @@ export default {
         } 
         this.validLogin= true
         this.loading = true
-        console.log(this.loginClient)
         axios.post(this.$url+'/loginClient', this.loginClient, {
             headers: {
               "Content-Type": 'application/json',
@@ -192,7 +190,6 @@ export default {
            
               this.validLogin = true
               this.$router.push({name: 'home'})
-              console.log(data)
               this.loading = false
               window.location.reload()
             }).catch( error => {

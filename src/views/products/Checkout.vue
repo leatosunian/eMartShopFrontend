@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div >
         <!-- Hero Section-->
         <section class="hero productMargin">
             <div class="container">
@@ -146,7 +146,7 @@
                                     Métodos de envío 
                                     
                                 </h6>
-                                <button v-b-modal.modal-lg variant="primary" style="border:none; margin-top:0px; margin-left:0!important;" class="textLink">
+                                <button v-b-modal.modal-lg variant="primary" style="border:none; margin-top:0px; margin-left:0!important;background-color:white!important" class="textLink">
                                     Información sobre métodos de envío
                                 </button>
 
@@ -225,47 +225,46 @@
 
                     </div>
 
-                    <div class="mb-6 col-lg-4">
-                        <div class="block mb-5">
-                            <div class="block-header">
-                            <h6 class="mb-0 text-uppercase">Resumen del pedido</h6>
+                    <div class="mb-6 col-lg-4" >
+                        <div class="block mb-5" >
+                            <div class="block-header" style="background-color:white!important">
+                                <h6 class="mb-0 text-uppercase">Resumen del pedido</h6>
                             </div>
-                            <div class="pt-1 block-body bg-light">
-                            <p class="text-sm">Shipping and additional costs are calculated based on values you have entered.</p>
-                            <ul class="mb-0 order-summary list-unstyled">
-                                <li class="order-summary-item">
-                                    <span>Subtotal </span>
-                                    <span>
-                                        {{priceConverter(total)}}
-                                    </span>
-                                </li>
-                                <li class="order-summary-item">
-                                    <span>Envío</span>
-                                    <span v-if="!freeShipping">
-                                        {{priceConverter(this.shippingCost)}}
-                                    </span>
-									<span v-if="freeShipping">
-                                        Gratis
-                                    </span>
-                                </li>
-                                <li class="border-0 order-summary-item">
-                                    <span>Total</span>
-                                    <strong class="order-summary-total" v-if="this.shippingCost > 0">
-                                        {{priceConverter(total + this.shippingCost)}}
-                                    </strong>
-                                    <strong class="order-summary-total" v-if="this.shippingCost == 0">
-                                        {{priceConverter(total)}}
-                                    </strong>
-                                </li>
-                            </ul>
+                            <div class="pt-1 block-body bg-light" style="background-color:white!important">
+                                <ul class="mb-0 order-summary list-unstyled">
+                                    <li class="order-summary-item">
+                                        <span>Subtotal </span>
+                                        <span>
+                                            {{priceConverter(total)}}
+                                        </span>
+                                    </li>
+                                    <li class="order-summary-item">
+                                        <span>Envío</span>
+                                        <span v-if="!freeShipping">
+                                            {{priceConverter(this.shippingCost)}}
+                                        </span>
+                                        <span v-if="freeShipping">
+                                            Gratis
+                                        </span>
+                                    </li>
+                                    <li class="border-0 order-summary-item">
+                                        <span>Total</span>
+                                        <strong class="order-summary-total" v-if="this.shippingCost > 0">
+                                            {{priceConverter(total + this.shippingCost)}}
+                                        </strong>
+                                        <strong class="order-summary-total" v-if="this.shippingCost == 0">
+                                            {{priceConverter(total)}}
+                                        </strong>
+                                    </li>
+                                </ul>
                             </div>
                             
                             
                             <div class="block mb-5" >
-                                <div class="block-header">
+                                <div class="block-header" style="background-color:white!important">
                                     <h6 class="mb-0 text-uppercase">Métodos de pago</h6>
                                 </div>
-                                <div class="pt-1 mb-3 block-body bg-light">
+                                <div class="pt-1 mb-3 block-body bg-light" style="background-color:white!important">
                                     <div class="mb-2 col-md-12">
                                      
                                         <span class="mb-2 d-block" style="letter-spacing: 0px;font-weight: 600;">Tarjeta de crédito</span>
@@ -395,7 +394,6 @@ export default {
             }
             const getUser = JSON.parse(localStorage.getItem('data_shopuser'))
             const user = getUser[1]
-            console.log(user);
             axios.get(this.$url+'/cart/get/'+user, {
                 headers: {
                     "Content-Type": 'application/json',
@@ -405,7 +403,6 @@ export default {
                 this.total = 0
                 const {data} = response
                 this.cart = data
-                console.log(this.cart);
                 this.loading = false
                 loader.hide()
 
@@ -442,7 +439,6 @@ export default {
                 }
             }).then((response) => {
                 const {data} = response
-                console.log(data);
                 this.getCart()
                 this.loading = false
                 this.$socket.emit('sendCart', true)
@@ -454,19 +450,17 @@ export default {
         getAddress(){
             const userId = JSON.parse(localStorage.getItem('data_shopuser'))[1]
             const token = localStorage.getItem('token_shopuser')
-            console.log(userId);
             axios.get(this.$url+'/profile/getAddress/'+userId, {
                 headers: {
                 "Content-Type": 'application/json',
                 "Authorization" : `Bearer ${token}`
                 }
             }).then((response) => {
-            const {data} = response
-            this.addresses = data
-            console.log(this.addresses)    
+                const {data} = response
+                this.addresses = data
 
             }).catch( error => {
-            console.log(error.response.data.msg)
+                console.log(error.response.data.msg)
             })
         },
         selectDirection(id){
@@ -508,13 +502,13 @@ export default {
             axios.post('https://api.mercadopago.com/checkout/preferences', data, {
                 headers: {
                     "Content-Type": 'application/json',
-                    "Authorization" : `Bearer TEST-8345754408126296-011013-80551365f23e905a81e45c9b2e873d68-172136330`
+                    "Authorization" : `Bearer APP_USR-8345754408126296-011013-ee93ef49ba895d5a6ca77a7907cd8b50-172136330`
                 }
             }).then((response) => {
               const {data} = response
               console.log(data);
               /* window.location.href = data.sandbox_init_point+'?ShipM='+this.shipMethodSelected*/
-			  window.location.href = data.sandbox_init_point
+			  window.location.href = data.init_point
 
             }).catch( error => {
               console.log(error.response.data.msg)
@@ -524,7 +518,6 @@ export default {
             let id
             if(this.cart[0]){
                 id = this.cart[0].product.seller
-                console.log(id);
             }
             const token = localStorage.getItem('token_shopuser')
             axios.get(this.$url+'/shipping/methods/'+id, {
@@ -535,7 +528,6 @@ export default {
             }).then((response) => {
                 const {data} = response
                 this.shipMethods = data
-				console.log(this.shipMethods.freeShippingAmount);
 				if(this.total < this.shipMethods.freeShippingAmount){
 					return this.freeShipping = false
 				}

@@ -166,7 +166,6 @@ export default {
             
             const getUser = JSON.parse(localStorage.getItem('data_shopuser'))
             const user = getUser[1]
-            console.log(user);
             axios.get(this.$url+'/cart/get/'+user, {
                 headers: {
                     "Content-Type": 'application/json',
@@ -176,7 +175,6 @@ export default {
                 this.total = 0
                 const {data} = response
                 this.cart = data
-                console.log(this.cart);
                 this.loading = false
                 loader.hide()
                 for(const item of data){
@@ -204,13 +202,11 @@ export default {
                 }
             }).then((response) => {
                 const {data} = response
-                console.log(data);
                 this.getCart()
                 this.loading = false
                 this.$socket.emit('sendCart', true)
             }).catch( error => {
-            console.log(error.response.data.msg)
-            this.msm_error = error.response.data.msg
+                this.msm_error = error.response.data.msg
             })  
         }
 

@@ -317,8 +317,6 @@ export default {
   },
   methods: {
     redirectToSubcategory(subitem){
-      console.log(subitem.categoryName);
-      console.log(subitem.name);
       this.$router.push({name: 'products', query:{ category: subitem.categoryName, subcategory: subitem.name } })
     },
     search(){
@@ -335,12 +333,9 @@ export default {
         }).then((response) => {
           const {data} = response
           this.categories = data
-          console.log(this.categories);
 
         }).catch( error => {
-          console.log(error.response.data.msg)
           this.msm_error = error.response.data.msg
-            
         })
     },
 
@@ -348,7 +343,6 @@ export default {
         const token = localStorage.getItem('token_shopuser')
         const getUser = JSON.parse(localStorage.getItem('data_shopuser'))
         const user = getUser[1]
-        console.log(user);
         axios.get(this.$url+'/cart/get/'+user, {
         headers: {
           "Content-Type": 'application/json',
@@ -358,7 +352,6 @@ export default {
           const {data} = response
           this.total = 0
           this.cart = data
-          console.log(this.cart);
 
           for(const item of data){
             const subtotal = item.product.price * item.amountOfProducts
@@ -366,7 +359,6 @@ export default {
           }
 
         }).catch( error => {
-          console.log(error.response.data.msg)
           this.msm_error = error.response.data.msg
         })
         
@@ -397,11 +389,9 @@ export default {
                 }
             }).then((response) => {
                 const {data} = response
-                console.log(data);
                 this.getCart()
                 this.$socket.emit('sendCart', true)
             }).catch( error => {
-            console.log(error.response.data.msg)
             this.msm_error = error.response.data.msg
             })  
         }
