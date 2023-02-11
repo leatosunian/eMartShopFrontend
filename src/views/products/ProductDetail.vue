@@ -38,28 +38,28 @@
 
                   <div class="owl-carousel detail-slider owl-theme owl-dots-modern" data-slider-id="1">
                     <div class="item"  v-if="gallery[0] " >
-                      <a class="glightbox" :src="$url+'/getGallery/'+gallery[0].image" data-title="Modern Jacket 1 - Caption text" data-gallery="product-gallery">
-                        <img class="img-fluid" :src="$url+'/getGallery/'+gallery[0].image" alt="Modern Jacket 1">
+                      <a class="glightbox" :src="$url+'/getGallery/'+gallery[0].image" :href="$url+'/getGallery/'+gallery[0].image" data-gallery="product-gallery">
+                        <img class="img-fluid" :src="$url+'/getGallery/'+gallery[0].image" alt="...">
                       </a>
                     </div>
                     <div class="item" v-if="gallery[1] " >
-                      <a class="glightbox" :src="$url+'/getGallery/'+gallery[1].image" data-title="Modern Jacket 1 - Caption text" data-gallery="product-gallery">
-                        <img class="img-fluid" :src="$url+'/getGallery/'+gallery[1].image" alt="Modern Jacket 1">
+                      <a class="glightbox" :src="$url+'/getGallery/'+gallery[1].image" :href="$url+'/getGallery/'+gallery[1].image" data-gallery="product-gallery">
+                        <img class="img-fluid" :src="$url+'/getGallery/'+gallery[1].image" alt="...">
                       </a>
                     </div>
                     <div class="item" v-if="gallery[2] ">
-                      <a class="glightbox" :src="$url+'/getGallery/'+gallery[2].image" data-title="Modern Jacket 1 - Caption text" data-gallery="product-gallery">
-                        <img class="img-fluid" :src="$url+'/getGallery/'+gallery[2].image" alt="Modern Jacket 1">
+                      <a class="glightbox" :src="$url+'/getGallery/'+gallery[2].image" :href="$url+'/getGallery/'+gallery[2].image" data-gallery="product-gallery">
+                        <img class="img-fluid" :src="$url+'/getGallery/'+gallery[2].image" alt="...">
                       </a>
                     </div>
                     <div class="item" v-if="gallery[3] ">
-                      <a class="glightbox" :src="$url+'/getGallery/'+gallery[3].image" data-title="Modern Jacket 1 - Caption text" data-gallery="product-gallery">
-                        <img class="img-fluid" :src="$url+'/getGallery/'+gallery[3].image" alt="Modern Jacket 1">
+                      <a class="glightbox" :src="$url+'/getGallery/'+gallery[3].image" :href="$url+'/getGallery/'+gallery[3].image" data-gallery="product-gallery">
+                        <img class="img-fluid" :src="$url+'/getGallery/'+gallery[3].image" alt="...">
                       </a>
                     </div>
                     <div class="item" v-if="gallery[4] ">
-                      <a class="glightbox" :src="$url+'/getGallery/'+gallery[4].image" data-title="Modern Jacket 1 - Caption text" data-gallery="product-gallery">
-                        <img class="img-fluid" :src="$url+'/getGallery/'+gallery[4].image" alt="Modern Jacket 1">
+                      <a class="glightbox" :src="$url+'/getGallery/'+gallery[4].image" :href="$url+'/getGallery/'+gallery[4].image" data-gallery="product-gallery">
+                        <img class="img-fluid" :src="$url+'/getGallery/'+gallery[4].image" alt="...">
                       </a>
                     </div>
                     
@@ -91,8 +91,8 @@
                   <div style="display:flex; flex-direction:row; gap:10px;">
                     <template v-for="variant in variants" >
                       <div v-if="variant.stock > 0 " class="hoverClass" v-on:click="getVariant(variant._id)" :id="'variant_'+variant._id">
-                        <span v-on:click="getVariant(variant._id)" :for="'variant_'+variant._id"  >{{variant.variant}}
-                          <input  class="input-invisible" type="radio" :value="variant._id" name="size" value="value_0" id="size_0" required>
+                        <input  class="input-invisible" type="radio" :value="variant._id" name="size" value="value_0" id="size_0" required>
+                        <span  v-on:click="getVariant(variant._id)" :for="'variant_'+variant._id" style="user-select:none;"  >{{variant.variant}}
                         </span>
                       </div>
                     </template>
@@ -134,7 +134,7 @@
 
               <ul class="list-inline">
                 <li class="list-inline-item">
-                  <button class="mb-1 btn btn-dark btn-lg btnAdd" type="button" v-on:click="addToCart()" style="">Agregar al carrito</button>
+                  <button class="mb-1 btn btn-dark btn-lg btnAdd" type="button" v-on:click="addToCart()" style="font-size:12px;">Agregar al carrito</button>
                 </li>
 
                 <!-- <li class="list-inline-item"><a class="mb-1 btn btn-outline-secondary" href="#"> <i class="far fa-heart me-2"></i>Add to wishlist</a></li> -->
