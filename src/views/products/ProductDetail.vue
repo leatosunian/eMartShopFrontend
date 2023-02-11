@@ -87,7 +87,7 @@
               <p class="mb-4 text-muted">{{product[0].description}}</p>
               <div class="row">
                 <div class="mb-3 col-sm-6 col-lg-12 detail-option">
-                  <h6 class="detail-option-heading">Talle<span></span></h6>
+                  <h6 class="detail-option-heading"> {{ product[0].str_variant }}</h6>
                   <div style="display:flex; flex-direction:row; gap:10px;">
                     <template v-for="variant in variants" >
                       <div v-if="variant.stock > 0 " class="hoverClass" v-on:click="getVariant(variant._id)" :id="'variant_'+variant._id">
