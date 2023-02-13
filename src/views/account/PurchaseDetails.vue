@@ -98,9 +98,7 @@
                           <strong>País</strong>: {{address.country}}
                         <br>
                           <strong>Estado</strong>: 
-                            <span v-if="saleData.statusStr === 'En preparación' " style="color: black; font-weight:800;" >{{saleData.statusStr}}</span>
-                            <span v-if="saleData.statusStr === 'En camino' " style="color: yellow;" >{{saleData.statusStr}}</span>
-                            <span v-if="saleData.statusStr === 'Recibido' " style="color: green;" >{{saleData.statusStr}}</span>
+                            <span style="color: black; font-weight:800;" >{{saleData.statusStr}}</span>
                         <br>
                         <strong v-if="saleData.trackingCode">Código de seguimiento:</strong> {{saleData.trackingCode}}
                         <br>
