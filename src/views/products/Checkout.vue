@@ -508,7 +508,7 @@ export default {
               const {data} = response
               console.log(data);
               /* window.location.href = data.sandbox_init_point+'?ShipM='+this.shipMethodSelected*/
-			  window.location.href = data.init_point
+			  window.location.href = data.sandbox_init_point
 
             }).catch( error => {
               console.log(error.response.data.msg)
