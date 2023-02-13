@@ -3,13 +3,15 @@
         <footer class="main-footer">
             
             <!-- Main block - menus, subscribe form-->
-            <div class="py-6 bg-gray-300 text-muted borde"> 
+            <div class="py-5 bg-gray-300 text-muted borde"> 
               <div class="container">
                 <div class="row">
 
                   <div class="mb-5 col-lg-4 mb-lg-0">
-                    <div class="mb-3 text-lg fw-bold text-uppercase text-dark">Sell<span class="text-primary">.</span></div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                    <div class="mb-3 text-lg fw-bold text-uppercase text-dark">
+                      <img src="@/assets/emart000.png" style="width:130px;" alt="eMart brand logo">
+                    </div>
+                    <p>Plataforma de E-commerce</p>
                     <ul class="list-inline">
                       <li class="list-inline-item"><a class="text-muted text-primary-hover" href="#" target="_blank" title="twitter"><img src="/assets/ig.png" alt="" style="width:26px"></a></li>
                       <li class="list-inline-item"><a class="text-muted text-primary-hover" href="#" target="_blank" title="twitter"><img src="/assets/tw.png" alt="" style="width:25px"></a></li>
@@ -32,11 +34,11 @@
                   <div class="mb-5 col-lg-2 col-md-6 mb-lg-0">
                     <h6 class="mb-3 text-uppercase text-dark">Company</h6>
                     <ul class="list-unstyled">
-                      <li> <a class="text-muted" href="#">Login                    </a></li>
-                      <li> <a class="text-muted" href="#">Register                    </a></li>
-                      <li> <a class="text-muted" href="#">Wishlist                    </a></li>
-                      <li> <a class="text-muted" href="#">Our Products                    </a></li>
-                      <li> <a class="text-muted" href="#">Checkouts                    </a></li>
+                      <li> <a class="text-muted" href="#">Login</a></li>
+                      <li> <a class="text-muted" href="#">Register</a></li>
+                      <li> <a class="text-muted" href="#">Wishlist</a></li>
+                      <li> <a class="text-muted" href="#">Our Products</a></li>
+                      <li> <a class="text-muted" href="#">Checkouts</a></li>
                     </ul>
                   </div>
                   
@@ -57,11 +59,11 @@
               </div>
             </div>
             <!-- Copyright section of the footer-->
-            <div class="py-4 text-white fw-light" style="background-color: black;">
+            <div class="py-3 text-white fw-light" style="background-color: black;">
               <div class="container">
                 <div class="row align-items-center">
                   <div class="text-center col-md-6 text-md-start">
-                    <p class="mb-md-0">&copy; 2020 Your company.  All rights reserved.</p>
+                    <p class="mb-md-0">&copy; All rights reserved. Developed by <a style="color:orange" href="https://tosunian.dev">tosunian.dev</a> </p>
                   </div>
                   <div class="col-md-6">
                     <ul class="mt-2 mb-0 text-center list-inline mt-md-0 text-md-end">

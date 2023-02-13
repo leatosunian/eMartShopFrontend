@@ -1,5 +1,11 @@
 <template>
     <div style="margin-bottom:150px; ">
+        <div class="notificationContainer" v-bind:class=" {actived: added} ">
+          <div style="display:flex; justify-content:center; height:70%; align-items:center; gap:12px">
+            <img src="@/assets/correct.png" alt="" style="width:35px;">
+            <span>{{msg}}</span>
+          </div>
+        </div>
         <!-- Hero Section-->
         <section class="hero loginMargin">
           <div class="container">
@@ -100,7 +106,7 @@
                     </template>
 
                     <!-- ERROR ALERT -->
-                    <div class="alert"  v-if="!valid">
+                    <div class="alert" style="border-radius:8px;"  v-if="!valid">
                       <small class="">{{ msm_error }} </small>
                     </div>
 
@@ -138,34 +144,54 @@ export default {
         validLogin: true,
         msm_error: '',
         loading: false,
-        loading_: false
+        loading_: false,
+        added: false,
+        msg: ''
       }
     },
     methods: {
       validateReg(){
-        console.log(this.newClient)
         if(!this.newClient.name || !this.newClient.email || !this.newClient.password || !this.newClient.confPassword){
           this.pass= true
           this.msm_error = '¡Todos los campos son obligatorios!'
-          return this.valid= false
-          
-        } else if(this.newClient.password !== this.newClient.confPassword ){
+          this.valid= false
+          setTimeout(() => {
+            this.valid = true
+          }, 3000);
+          return 
+           
+        } else if(this.newClient.name.split(' ').length != 2) {
+          this.msm_error = 'Ingresá tu nombre y apellido'
+          this.valid= false 
+          this.pass= false
+          setTimeout(() => {
+            this.valid = true
+          }, 3000);
+          return 
+        }else if(this.newClient.password !== this.newClient.confPassword ){
           this.msm_error = 'Las contraseñas deben ser iguales.'
           this.valid= false 
-          return this.pass= false
+          this.pass= false
+          setTimeout(() => {
+            this.valid = true
+          }, 3000);
+          return 
         }
         this.valid= true
         this.pass= true
-
         axios.post(this.$url+'/register', this.newClient, {
             headers: {
               "Content-Type": 'application/json',
             }
             }).then((response) => {
               const {data} = response
+              this.msg = data.msg
               this.valid= true
+              this.added = true
+              setTimeout(() => {
+                this.added = false
+              }, 4000);
             }).catch( error => {
-              console.log(error.response.data.msg)
               this.msm_error = error.response.data.msg
               this.valid= false 
             })
@@ -175,7 +201,11 @@ export default {
         if(!this.loginClient.email || !this.loginClient.password ){
           this.pass= true
           this.msm_error = '¡Todos los campos son obligatorios!'
-          return this.validLogin= false
+          this.validLogin= false
+          setTimeout(() => {
+            this.validLogin = true
+          }, 3000);
+          return 
         } 
         this.validLogin= true
         this.loading = true
@@ -206,7 +236,6 @@ export default {
     beforeMount(){
       const token = localStorage.getItem('token_shopuser')
       if(token === null){
-        console.log('null')
       } else{
         this.$router.push({name: 'home'})
       }
