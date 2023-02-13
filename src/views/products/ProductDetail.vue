@@ -147,7 +147,6 @@
         <div class="container">
           <ul class="nav nav-tabs flex-column flex-sm-row" role="tablist">
             <li class="nav-item"><a class="active nav-link detail-nav-link" data-bs-toggle="tab" href="#additional-information" role="tab">Información del producto</a></li>
-            <li class="nav-item"><a class="nav-link detail-nav-link" data-bs-toggle="tab" href="#reviews" role="tab">Reviews</a></li>
           </ul>
           <div class="py-4 tab-content">
           
