@@ -14,11 +14,11 @@
             <!-- Navbar Collapse -->
             <div class="collapse navbar-collapse" id="navbarCollapse">
               <ul class="mx-auto navbar-nav">
-                <li class="nav-item">
-                  <router-link to="/" class="nav-link">Inicio</router-link>
+                <li v-on:click="toHome()" class="nav-item" >
+                  <router-link  to="/" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" class="nav-link"  >Inicio</router-link>
                 </li>
-                <li class="nav-item">
-                  <router-link to="/products" class="nav-link">Productos</router-link>
+                <li v-on:click="toProducts()" class="nav-item">
+                  <router-link to="/products" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" class="nav-link">Productos</router-link>
                 </li>
 
                 <!-- Megamenu-->
@@ -32,8 +32,8 @@
                             <!-- Megamenu list-->
                             <h6 class="text-uppercase" style="margin-bottom:12px;">{{item.category.name}}</h6>
                             <ul class="megamenu-list list-unstyled">
-                              <li class="megamenu-list-item" v-for="subitem in item.subcategories">
-                                <a class="megamenu-list-link" style="cursor:pointer;" v-on:click="redirectToSubcategory(subitem)"> {{ subitem.name }} </a>
+                              <li v-on:click="redirectToSubcategory(subitem)" class="megamenu-list-item" v-for="subitem in item.subcategories">
+                                <a class="megamenu-list-link" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" style="cursor:pointer;" > {{ subitem.name }} </a>
                               </li>
                             </ul>
                             <!-- Megamenu list-->
@@ -47,7 +47,7 @@
                   </div>
                 </li>
 
-                <li class="nav-item"><a class="nav-link" href="">Contacto</a>
+                <li class="nav-item"><a class="nav-link" href="" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">Contacto</a>
                 </li>
               </ul>
 
@@ -66,18 +66,19 @@
                   
                   <!-- User Not Logged - link to login page-->
                   <div class="nav-item ">
-                      <router-link v-if="!loggedIn" class="navbar-icon-link desktop" to="/login">
+                      
+                      <!-- <router-link v-if="!loggedIn" class="navbar-icon-link desktop" to="/login">
                         <img src="/assets/icons/user.png" style="width: 25px;" />
                         <span class="text-sm ms-2 ms-lg-0 text-uppercase fw-bold d-none d-sm-inline d-lg-none">&nbsp; Iniciar Sesión</span>
-                      </router-link>
+                      </router-link> -->
                       <router-link v-if="!loggedIn" class="navbar-icon-link mobile" to="/login">
-                        <img src="/assets/icons/user.png" style="width: 25px;" />
-                        <span class="text-sm ms-2 ms-lg-0 text-uppercase fw-bold d-none d-sm-inline d-lg-none">&nbsp; Iniciar Sesión</span>
+                        <img data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" src="/assets/icons/user.png" style="width: 25px;" />
+                        <span data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" class="text-sm ms-2 ms-lg-0 text-uppercase fw-bold d-none d-sm-inline d-lg-none">&nbsp; Iniciar Sesión</span>
                       </router-link>
 
                       <router-link to="/profile/address" v-if="loggedIn" class="navbar-icon-link mobile" >
-                        <img src="/assets/icons/user.png" style="width: 25px;" />
-                        <span class="text-sm ms-2 ms-lg-0 text-uppercase fw-bold d-none d-sm-inline d-lg-none">&nbsp; Mi perfil</span>
+                        <img src="/assets/icons/user.png" style="width: 25px;" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" />
+                        <span data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" class="text-sm ms-2 ms-lg-0 text-uppercase fw-bold d-none d-sm-inline d-lg-none">&nbsp; Mi perfil</span>
                       </router-link>
                       
 
@@ -101,8 +102,8 @@
                   <!-- Cart Dropdown-->
                   <div class="nav-item dropdown " >
                       <router-link to="/cart" class="navbar-icon-link d-lg-none" >
-                          <img src="/assets/icons/cart.png" style="width: 25px;" />
-                          <span class="text-sm ms-2 ms-lg-0 text-uppercase fw-bold d-none d-sm-inline d-lg-none">Carrito</span>
+                          <img data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" src="/assets/icons/cart.png" style="width: 25px;" />
+                          <span data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" class="text-sm ms-2 ms-lg-0 text-uppercase fw-bold d-none d-sm-inline d-lg-none">Carrito</span>
                       </router-link>
                       <div class="d-none d-lg-block">
                           <a class="navbar-icon-link" id="cartdetails" href="cart.html" data-bs-target="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -152,7 +153,7 @@
         <div class="top-bar" style="height: 38px !important;">
           <div class="container-fluid"  style="height: 38px !important;">
             <div class="justify-content-center row d-flex align-items-center" style="height: 38px !important; background-color:orange">
-              <span class="text-white text-uppercase" style="font-size:.9rem; font-weight:600; width:fit-content; letter-spacing:0px;">
+              <span class="text-white text-uppercase" style="font-size:.83rem; font-weight:600; width:fit-content; letter-spacing:0px;">
                 <span style="text-decoration:underline"> Envio gratis</span> 
                  con tu compra superior a 
                 <span style="text-decoration:underline"> ${{freeShipping}} </span> 
@@ -299,6 +300,12 @@ export default {
    
   },
   methods: {
+    toHome(){
+      this.$router.push({name: 'home'})
+    },
+    toProducts(){
+      this.$router.push({name: 'products'})
+    },
     getShippingData(){
       axios.get(this.$url+'/getshippingdata', {
         headers: {
@@ -306,7 +313,6 @@ export default {
         }
       }).then((response) => {
         const {data} = response
-        console.log(data);
         if(data[0]){
           this.freeShipping = data[0].freeShippingAmount
         }

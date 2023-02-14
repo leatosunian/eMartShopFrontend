@@ -44,10 +44,10 @@
           </div>
         </template>
 
-        <template v-if="!loading">
+        <template v-if="!loading" >
           
           <!-- Grid -->
-          <div class="products-grid col-xl-9 col-lg-8 order-lg-2">
+          <div class="products-grid col-xl-9 col-lg-8 order-lg-2" style="margin-bottom:100px;">
 
             <header class="product-grid-header">
               <div class="mb-3 me-3">
@@ -111,7 +111,7 @@
               :per-page="perPage"
               pills
               aria-controls="my-table"
-              style="justify-content: center; color:black"
+              style="justify-content: center; color:black; margin-top:25px;"
               v-on:click="scrollToTop()"
             ></b-pagination> 
 

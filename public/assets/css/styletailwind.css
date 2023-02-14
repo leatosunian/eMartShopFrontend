@@ -67,7 +67,7 @@
     margin-top: 9rem;
 }
 .productMargin{
-    margin-top: 5rem;
+    margin-top: 7rem;
 }
 .categorySize {
     font-size:54px;
@@ -184,10 +184,10 @@
 
 @media (max-width: 991px){
     .loginMargin{
-        margin-top: 7rem;
+        margin-top: 8rem;
     }
     .productMargin{
-        margin-top: 3rem;
+        margin-top: 5.6rem;
     }
     .categorySize {
         font-size: 28px !important;

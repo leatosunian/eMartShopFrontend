@@ -1,5 +1,5 @@
 <template>
-    <div style="margin-bottom:150px; ">
+    <div style="margin-bottom:150px; " >
         <div class="notificationContainer" v-bind:class=" {actived: added} ">
           <div style="display:flex; justify-content:center; height:70%; align-items:center; gap:12px">
             <img src="@/assets/correct.png" alt="" style="width:35px;">
@@ -28,7 +28,7 @@
                   <p class="lead">Ya tenés una cuenta?</p>
                   <p class="text-muted">¡Iniciá sesión y hacenos tu pedido!</p>
                   <hr>
-                  <form action="customer-orders.html" method="get">
+                  <form >
                     <div class="mb-4">
                       <label class="form-label" for="email1">Email</label>
                       <input class="form-control" id="email1" type="text" style="border-radius: 8px;" v-model="loginClient.email" >

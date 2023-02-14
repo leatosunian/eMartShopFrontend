@@ -20,7 +20,7 @@
                     </ul>
                   </div>
                   
-                  <div class="mb-5 col-lg-2 col-md-6 mb-lg-0">
+                  <div class="mb-3 col-lg-2 col-md-6 mb-lg-0">
                     <h6 class="mb-3 text-white text-uppercase">Shop</h6>
                     <ul class="list-unstyled">
                       <li> <a class="text-white" href="#">For Women</a></li>
@@ -31,7 +31,7 @@
                     </ul>
                   </div>
                   
-                  <div class="mb-5 col-lg-2 col-md-6 mb-lg-0">
+                  <div class="mb-3 col-lg-2 col-md-6 mb-lg-0">
                     <h6 class="mb-3 text-white text-uppercase">Company</h6>
                     <ul class="list-unstyled">
                       <li> <a class="text-white" href="#">Login</a></li>
@@ -45,8 +45,8 @@
                   <div class="col-lg-4">
                     <h6 class="mb-3 text-white text-uppercase">Daily Offers & Discounts</h6>
                     <p class="mb-3 text-white"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. At itaque temporibus.</p>
-                    <h6 class="mb-3 text-white text-uppercase">Daily Offers & Discounts</h6>
-                    <p class="mb-3 text-white"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. At itaque temporibus.</p>
+                    <h6 class="mb-3 text-white text-uppercase">At itaque temporibus</h6>
+                    <p class="mb-3 text-white"> Lorem ipsum dolor sit amet, consectetur, at itaque temporibus.</p>
                   </div>
 
                 </div>
@@ -57,7 +57,7 @@
               <div class="container">
                 <div class="row align-items-center">
                   <div class="text-center col-md-6 text-md-start">
-                    <p class="mb-md-0">&copy; Todos los derechos reservados. Desarrollado por <a style="color:orange" href="https://tosunian.dev">tosunian.dev</a> </p>
+                    <p class="mb-md-0">&copy; Todos los derechos reservados. Desarrollado por <a style="color:orange" href="https://tosunian.dev">leatosunian.dev</a> </p>
                   </div>
                   <div class="col-md-6">
                     <ul class="mt-2 mb-0 text-center list-inline mt-md-0 text-md-end">
