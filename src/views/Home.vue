@@ -146,14 +146,14 @@
             <div class="col-lg-4 service-column">
               <img src="/assets/coins.gif" alt="" class="svg-icon service-icon">
               <div class="service-text">
-                <h6 class="text-uppercase">Money back guarantee</h6>
-                <p class="mb-0 text-sm text-muted fw-light">30 Days Money Back Guarantee</p>
+                <h6 class="text-uppercase">Cambios y devoluciones</h6>
+                <p class="mb-0 text-sm text-muted fw-light">Lorem ipsum dolor sit amet consectetur</p>
               </div>
             </div>
             <div class="col-lg-4 service-column">
               <img src="/assets/person.gif" alt="" class="svg-icon service-icon">
               <div class="service-text">
-                <h6 class="text-uppercase">020-800-456-747</h6>
+                <h6 class="text-uppercase">223-5-423025</h6>
                 <p class="mb-0 text-sm text-muted fw-light">¡Contactanos!</p>
               </div>
             </div>
@@ -189,6 +189,7 @@ export default {
     return {
       fourProducts: [],
       mostWantedProducts: [],
+      freeShipping: ''
     }
   },
   mounted () {
