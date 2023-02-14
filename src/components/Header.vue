@@ -1,39 +1,6 @@
 <template>
     <header class="header header-absolute" >
-        <!-- Top Bar-->
-        <!-- <div class="top-bar" style="height: 44px !important;">
-          <div class="container-fluid"  style="height: 44px !important;">
-            <div class="row d-flex align-items-center" style="height: 44px !important;">
-              <div class="col-sm-7 d-none d-sm-block align-items-center" style="height: 44px !important;">
-                <ul class="mb-0 list-inline topbar-text align-items-center" style="height: 44px !important;" >
-                  <li class="" >
-                    <img src="/assets/icons/telephone-bl.png" style="width: 16px;">
-                    020-800-456-747
-                  </li>
-                  <li class="px-3 list-inline-item">Envios gratis desde $300</li>
-                </ul>
-              </div>
-              <div class="col-sm-5 d-flex justify-content-end" >
-                <!- Language Dropdown->
-                <div class="px-3 dropdown border-end"><a class="dropdown-toggle topbar-link" id="langsDropdown" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-haspopup="true" aria-expanded="false"><img class="topbar-flag" src="https://d19m59y37dris4.cloudfront.net/sell/2-0/img/flag/gb.svg" alt="english">English</a>
-                  <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated" aria-labelledby="langsDropdown"><a class="text-sm dropdown-item" href="#"><img class="topbar-flag" src="https://d19m59y37dris4.cloudfront.net/sell/2-0/img/flag/de.svg" alt="german">German</a><a class="text-sm dropdown-item" href="#"> <img class="topbar-flag" src="https://d19m59y37dris4.cloudfront.net/sell/2-0/img/flag/fr.svg" alt="french">French</a></div>
-                </div>
-                <!- Currency Dropdown->
-                <div class="dropdown ps-3 ms-0"><a class="dropdown-toggle topbar-link" id="currencyDropdown" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-haspopup="true" aria-expanded="false">USD</a>
-                  <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated" aria-labelledby="currencyDropdown">
-                    <a class="text-sm dropdown-item" href="#"> 
-                      EUR
-                    </a>
-                    <a class="text-sm dropdown-item" href="#">
-                      GBP
-                      </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
-        <!-- Top Bar End-->
+        
         <!-- Navbar-->
         <nav class="navbar navbar-expand-lg navbar-sticky navbar-airy navbar-dark bg-fixed-white navbar-fixed-light" style="background:#121212" >
           <div class="container-fluid">  
@@ -180,6 +147,20 @@
           </div>
         </nav>
         <!-- /Navbar -->
+
+        <!-- bottom Bar-->
+        <div class="top-bar" style="height: 38px !important;">
+          <div class="container-fluid"  style="height: 38px !important;">
+            <div class="justify-content-center row d-flex align-items-center" style="height: 38px !important; background-color:orange">
+              <span class="text-white text-uppercase" style="font-size:.9rem; font-weight:600; width:fit-content; letter-spacing:0px;">
+                <span style="text-decoration:underline"> Envio gratis</span> 
+                 con tu compra superior a 
+                <span style="text-decoration:underline"> ${{freeShipping}} </span> 
+              </span>
+            </div>
+          </div>
+        </div>
+        <!-- bottom Bar End-->
        
     </header>
 </template>
@@ -298,10 +279,12 @@ export default {
       cart: [],
       total: 0,
       categories: [],
-      filter: ''
+      filter: '',
+      freeShipping: ''
     }
   },
   beforeMount(){
+    this.getShippingData()
     this.getCategories()
     const token = localStorage.getItem('token_shopuser')
     if(token === null){
@@ -313,9 +296,24 @@ export default {
     }
     this.getCart()
     this.created()
-    
+   
   },
   methods: {
+    getShippingData(){
+      axios.get(this.$url+'/getshippingdata', {
+        headers: {
+            "Content-Type": 'application/json',
+        }
+      }).then((response) => {
+        const {data} = response
+        console.log(data);
+        if(data[0]){
+          this.freeShipping = data[0].freeShippingAmount
+        }
+      }).catch( error => {
+        console.log(error.response.data.msg)
+      })
+    },
     redirectToSubcategory(subitem){
       this.$router.push({name: 'products', query:{ category: subitem.categoryName, subcategory: subitem.name } })
     },
@@ -333,7 +331,6 @@ export default {
         }).then((response) => {
           const {data} = response
           this.categories = data
-
         }).catch( error => {
           this.msm_error = error.response.data.msg
         })
@@ -357,7 +354,6 @@ export default {
             const subtotal = item.product.price * item.amountOfProducts
             this.total = this.total + subtotal
           }
-
         }).catch( error => {
           this.msm_error = error.response.data.msg
         })
