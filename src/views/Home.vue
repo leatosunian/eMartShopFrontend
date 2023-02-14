@@ -7,14 +7,14 @@
             <div class="py-6 mt-6 overlay-content px-lg-5 mt-lg-0 mb-lg-5">
               <h1 class="mb-4 text-white display-3 fw-bold split-screen-heading letter-spacing-1">Hombres</h1>
               <p class="mb-4 lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              <button class="catButton" type="button">VER PRODUCTOS</button>
+              <p> <button class="catButton" type="button">VER PRODUCTOS</button></p>
             </div>
           </div>
-          <div class="col-lg-6 split-screen-column align-items-center align-items-lg-end" style="background-image: url(../assets/back2.jpeg); background-color: #e5b6b4;"> 
+          <div class="col-lg-6 split-screen-column align-items-center align-items-lg-end" style="background-image: url(../assets/back3.jpeg); background-color: #e5b6b4;"> 
             <div class="py-6 px-lg-5 mb-lg-5">
-              <h1 class="mb-4 display-3 fw-bold split-screen-heading letter-spacing-1" style="color: black;">Mujeres</h1>
-              <p class="mb-4 lead" style="color: black; font-weight:500;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              <button style="color:black; border-color:black" class="catButton" type="button">VER PRODUCTOS</button>
+              <h1 class="mb-4 display-3 fw-bold split-screen-heading letter-spacing-1" style="color: white;">Mujeres</h1>
+              <p class="mb-4 lead" style="color: white; font-weight:500;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <button class="catButton" type="button">VER PRODUCTOS</button>
             </div>
           </div>
         </div>
