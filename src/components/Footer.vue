@@ -3,13 +3,13 @@
         <footer class="main-footer">
             
             <!-- Main block - menus, subscribe form-->
-            <div class="py-5 bg-gray-300 text-muted borde"> 
+            <div class="text-muted borde" style="background-color: #121212; padding-top: 2.4rem;"> 
               <div class="container">
                 <div class="row">
 
                   <div class="mb-5 col-lg-4 mb-lg-0">
                     <div class="mb-3 text-lg fw-bold text-uppercase text-dark">
-                      <img src="@/assets/emart000.png" style="width:130px;" alt="eMart brand logo">
+                      <img src="@/assets/emart0000.png" style="width:130px;" alt="eMart brand logo">
                     </div>
                     <p>Plataforma de E-commerce</p>
                     <ul class="list-inline">
@@ -21,49 +21,43 @@
                   </div>
                   
                   <div class="mb-5 col-lg-2 col-md-6 mb-lg-0">
-                    <h6 class="mb-3 text-uppercase text-dark">Shop</h6>
+                    <h6 class="mb-3 text-white text-uppercase">Shop</h6>
                     <ul class="list-unstyled">
-                      <li> <a class="text-muted" href="#">For Women</a></li>
-                      <li> <a class="text-muted" href="#">For Men</a></li>
-                      <li> <a class="text-muted" href="#">Stores</a></li>
-                      <li> <a class="text-muted" href="#">Our Blog</a></li>
-                      <li> <a class="text-muted" href="#">Shop</a></li>
+                      <li> <a class="text-white" href="#">For Women</a></li>
+                      <li> <a class="text-white" href="#">For Men</a></li>
+                      <li> <a class="text-white" href="#">Stores</a></li>
+                      <li> <a class="text-white" href="#">Our Blog</a></li>
+                      <li> <a class="text-white" href="#">Shop</a></li>
                     </ul>
                   </div>
                   
                   <div class="mb-5 col-lg-2 col-md-6 mb-lg-0">
-                    <h6 class="mb-3 text-uppercase text-dark">Company</h6>
+                    <h6 class="mb-3 text-white text-uppercase">Company</h6>
                     <ul class="list-unstyled">
-                      <li> <a class="text-muted" href="#">Login</a></li>
-                      <li> <a class="text-muted" href="#">Register</a></li>
-                      <li> <a class="text-muted" href="#">Wishlist</a></li>
-                      <li> <a class="text-muted" href="#">Our Products</a></li>
-                      <li> <a class="text-muted" href="#">Checkouts</a></li>
+                      <li> <a class="text-white" href="#">Login</a></li>
+                      <li> <a class="text-white" href="#">Register</a></li>
+                      <li> <a class="text-white" href="#">Wishlist</a></li>
+                      <li> <a class="text-white" href="#">Our Products</a></li>
+                      <li> <a class="text-white" href="#">Checkouts</a></li>
                     </ul>
                   </div>
                   
                   <div class="col-lg-4">
-                    <h6 class="mb-3 text-uppercase text-dark">Daily Offers & Discounts</h6>
-                    <p class="mb-3"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. At itaque temporibus.</p>
-                    <form action="#" id="newsletter-form">
-                      <div class="mb-3 input-group">
-                        <input class="bg-transparent form-control border-secondary border-end-0" type="email" placeholder="Your Email Address" aria-label="Your Email Address">
-                        <div class="input-group-append">
-                          <button class="btn btn-outline-secondary border-start-0" type="submit"> <i class="text-lg fa fa-paper-plane text-dark"></i></button>
-                        </div>
-                      </div>
-                    </form>
+                    <h6 class="mb-3 text-white text-uppercase">Daily Offers & Discounts</h6>
+                    <p class="mb-3 text-white"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. At itaque temporibus.</p>
+                    <h6 class="mb-3 text-white text-uppercase">Daily Offers & Discounts</h6>
+                    <p class="mb-3 text-white"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. At itaque temporibus.</p>
                   </div>
-                
+
                 </div>
               </div>
             </div>
             <!-- Copyright section of the footer-->
-            <div class="py-3 text-white fw-light" style="background-color: black;">
+            <div class="text-white fw-light" style="background-color: #121212; padding-bottom:1.2rem; padding-top: .6rem;">
               <div class="container">
                 <div class="row align-items-center">
                   <div class="text-center col-md-6 text-md-start">
-                    <p class="mb-md-0">&copy; All rights reserved. Developed by <a style="color:orange" href="https://tosunian.dev">tosunian.dev</a> </p>
+                    <p class="mb-md-0">&copy; Todos los derechos reservados. Desarrollado por <a style="color:orange" href="https://tosunian.dev">tosunian.dev</a> </p>
                   </div>
                   <div class="col-md-6">
                     <ul class="mt-2 mb-0 text-center list-inline mt-md-0 text-md-end">

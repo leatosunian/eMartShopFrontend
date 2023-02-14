@@ -57,7 +57,7 @@
 
                     <template v-if="!loading">
                       <div class="mb-4 text-center">
-                        <button class="buttonLogin"  type="button" v-on:click="login()" >Iniciar Sesión</button>
+                        <button class="buttonLogin"  type="button" v-on:click="login()" >Iniciar sesión</button>
                       </div>
                     </template>
                     
