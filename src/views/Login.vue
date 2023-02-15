@@ -217,7 +217,7 @@ export default {
               const {data} = response
               localStorage.setItem('token_shopuser', data.token)
               localStorage.setItem('data_shopuser', JSON.stringify([data.name, data._id, data.email]))
-           
+              
               this.validLogin = true
               this.$router.push({name: 'home'})
               this.loading = false

@@ -50,7 +50,7 @@
                                 </div>
                                 <div class="cart-body">
                                     <!-- Product-->
-                                    <div class="cart-item" v-for="item in cart">
+                                    <div v-if="cart.length > 0"  class="cart-item" v-for="item in cart">
                                         <div class="text-center row d-flex align-items-center">
                                             <div class="col-5">
                                             <div class="d-flex align-items-center">
@@ -162,7 +162,6 @@ export default {
             if(!token){
                 this.loading = false
             }
-
             
             const getUser = JSON.parse(localStorage.getItem('data_shopuser'))
             const user = getUser[1]
@@ -183,8 +182,7 @@ export default {
                 }
 
             }).catch( error => {
-                console.log(error.response.data.msg)
-                this.msm_error = error.response.data.msg
+                console.log(error);
                 loader.hide()
             })  
         },
