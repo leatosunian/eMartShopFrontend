@@ -59,7 +59,7 @@
               <div class="container">
                 <div class="row align-items-center">
                   <div class="text-center col-md-6 text-md-start">
-                    <p class="mb-md-0">&copy; Todos los derechos reservados. Desarrollado por <a style="color:orange" href="https://tosunian.dev">tosunian.dev</a> </p>
+                    <p class="mb-md-0">&copy; Todos los derechos reservados. Desarrollado por <a style="color:orange" target='_blank' href="https://tosunian.dev">tosunian.dev</a> </p>
                   </div>
                   <div class="col-md-6">
                     <ul class="mt-2 mb-0 text-center list-inline mt-md-0 text-md-end">
