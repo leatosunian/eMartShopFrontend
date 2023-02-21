@@ -90,7 +90,8 @@
                   <h6 class="detail-option-heading"> {{ product[0].str_variant }}</h6>
                   <div style="display:flex; flex-direction:row; gap:10px;">
                     <template v-for="variant in variants" >
-                      <div v-if="variant.stock > 0 " class="hoverClass" v-on:click="getVariant(variant._id)" :id="'variant_'+variant._id">
+                      <div v-if="variant.stock > 0 " style="width: fit-content;
+                        padding: 0 10px;" class="hoverClass" v-on:click="getVariant(variant._id)" :id="'variant_'+variant._id">
                         <input  class="input-invisible" type="radio" :value="variant._id" name="size" value="value_0" id="size_0" required>
                         <span  v-on:click="getVariant(variant._id)" :for="'variant_'+variant._id" style="user-select:none;"  >{{variant.variant}}
                         </span>
