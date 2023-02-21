@@ -6,7 +6,8 @@
         <div class="container-fluid">  
           <!-- Navbar Header  -->
           <router-link class="navbar-brand"  style="heigth:fit-content!important;" to="/">
-            <img src="@/assets/emart0000.png" class="logoImg" alt="">
+            <!-- <img src="@/assets/emart0000.png" class="logoImg" alt=""> -->
+            <img src="@/assets/new-deco.png" class="logoImg" style="width:41px!important;" alt="">
           </router-link>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <img src="@/assets/menu.png" style="width: 20px; margin:auto" alt="">

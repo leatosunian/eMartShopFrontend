@@ -37,7 +37,6 @@
 }
 .hoverClass:hover{
     border: 1px solid orange;
-
     transition: all ease-in-out .3s;
     -webkit-transition: all ease-in-out .3s;
     -moz-transition: all ease-in-out .3s;

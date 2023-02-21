@@ -100,7 +100,7 @@
                           <strong>Estado</strong>: 
                             <span style="color: black; font-weight:800;" >{{saleData.statusStr}}</span>
                         <br>
-                        <strong v-if="saleData.trackingCode">Código de seguimiento:</strong> {{saleData.trackingCode}}
+                        <strong v-if="saleData.trackingCode">Código de seguimiento:</strong> <a target='_blank' :href="'https://www.andreani.com/#!/informacionEnvio/'+saleData.trackingCode">{{saleData.trackingCode}}</a> 
                         <br>
                       </p>
                     </div>
