@@ -9,11 +9,11 @@
 
                   <div class="mb-5 col-lg-4 mb-lg-0">
                     <div class="mb-3 text-lg fw-bold text-uppercase text-dark">
-                      <!-- <img src="@/assets/emart0000.png" style="width:130px;" alt="eMart brand logo"> -->
-                      <img src="@/assets/new-deco.png" class="logoImg" style="width:47px!important;" alt="">
+                      <img src="@/assets/emart0000.png" style="width:130px;" alt="eMart brand logo">
+                      <!-- <img src="@/assets/new-deco.png" class="logoImg" style="width:47px!important;" alt=""> -->
                     </div>
-                    <!-- <p>Plataforma de E-commerce</p> -->
-                    <p>New Deco - Tienda online</p>
+                    <p>Plataforma de E-commerce</p>
+                    <!-- <p>New Deco - Tienda online</p> -->
                     <ul class="list-inline">
                       <li class="list-inline-item"><a class="text-muted text-primary-hover" href="#" target="_blank" title="twitter"><img src="/assets/ig.png" alt="" style="width:26px"></a></li>
                       <li class="list-inline-item"><a class="text-muted text-primary-hover" href="#" target="_blank" title="twitter"><img src="/assets/tw.png" alt="" style="width:25px"></a></li>
@@ -66,7 +66,6 @@
                       <li class="list-inline-item"><img class="w-2rem" src="https://d19m59y37dris4.cloudfront.net/sell/2-0/img/visa.svg" alt="..."></li>
                       <li class="list-inline-item"><img class="w-2rem" src="https://d19m59y37dris4.cloudfront.net/sell/2-0/img/mastercard.svg" alt="..."></li>
                       <li class="list-inline-item"><img class="w-2rem" src="https://d19m59y37dris4.cloudfront.net/sell/2-0/img/paypal.svg" alt="..."></li>
-                      <li class="list-inline-item"><img class="w-2rem" src="https://d19m59y37dris4.cloudfront.net/sell/2-0/img/western-union.svg" alt="..."></li>
                     </ul>
                   </div>
                 </div>
