@@ -34,7 +34,7 @@
                     </div>
                     <div class="cart-body">
                       <!-- Product-->
-                      <div class="cart-item"  v-for="item in products">
+                      <div class="cart-item" v-if="products != null"  v-for="item in products">
                         <div class="text-center row d-flex align-items-center">
                           <div class="col-6">
                             <div class="d-flex align-items-center">
@@ -166,6 +166,7 @@ export default {
             }
         }).then((response) => {
           const {data} = response
+          console.log(data);
           this.address = data.sale[0].address
           this.saleData = data.sale[0]
           this.products = data.saleDetails

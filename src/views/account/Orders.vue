@@ -126,6 +126,7 @@ export default {
                 }
             }).then((response) => {
                 const {data} = response
+                console.log(data);
                 this.orders = data
                 loader.hide()
             }).catch( error => {
