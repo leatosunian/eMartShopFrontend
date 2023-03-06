@@ -133,11 +133,22 @@
                 <small class="">{{ msm_error }} </small>
               </div>
 
-              <ul class="list-inline">
-                <li class="list-inline-item">
-                  <button class="mb-1 btn btn-dark btn-lg btnAdd" type="button" v-on:click="addToCart()" style="font-size:12px;">Agregar al carrito</button>
-                </li>
+              <ul class="list-inline" style="min-width:260px;width: fit-content;min-height:50px; height:fit-content;">
+                <template v-if="addedToCart">
+                  <div>
+                      <div class="row">
+                          <div class="text-center col-12">
+                              <div class="mt-4 mb-5 spinner-border" role="status">
+                              <span class="visually-hidden">Cargando...</span>
+                              </div>
+                          </div>
+                      </div> 
+                  </div>
+                </template>
 
+                <li class="list-inline-item">
+                  <button v-if="!addedToCart" class="mb-1 btn btn-dark btn-lg btnAdd" type="button" v-on:click="addToCart()" style="font-size:12px;">Agregar al carrito</button>
+                </li>
                 <!-- <li class="list-inline-item"><a class="mb-1 btn btn-outline-secondary" href="#"> <i class="far fa-heart me-2"></i>Add to wishlist</a></li> -->
               </ul>
             </div>
@@ -262,7 +273,8 @@ export default {
         userData: {},
         msm_error: '',
         valid: true,
-        added: false
+        added: false,
+        addedToCart: false
       }
       
     },
@@ -340,14 +352,17 @@ export default {
         }, 40);
       },
       addToCart(){
+        this.addedToCart = true
         const loggedIn = localStorage.getItem('token_shopuser')
         if(!loggedIn){
           this.valid = false
+          this.addedToCart = false
           this.msm_error = 'Iniciá sesión para comprar'
           return
         }
         if(!this.cartObj.variant){
           this.valid = false
+          this.addedToCart = false
           return this.msm_error = 'Selecciona un talle'
         } 
         const token = localStorage.getItem('token_shopuser')
@@ -368,6 +383,7 @@ export default {
           this.valid = true
           this.msm_error = ''
           this.added = true
+          this.addedToCart = false
           setTimeout(() => {
             this.added = false
           }, 4000);
