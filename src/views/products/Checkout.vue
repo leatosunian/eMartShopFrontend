@@ -191,7 +191,7 @@
             
                                     <div v-if="shipMethods.toBranch === 'Permitido'" style="border: 1px solid rgba(0, 0, 0, 0.18); border-radius: 8px; padding: 6px 10px; display: flex; align-items:center; justify-content:space-between; gap:10px;">
                                         <span>Retiro por nuestra sucursal</span>
-                                        <input type="radio" v-model="shippingCost" v-on:click="selectShipMethod($event)" value="0" name="shippingMethod" id="toBranch" style="width:18px; height:18px;">
+                                        <input type="radio" v-model="shippingCost" v-on:click="selectShipMethod($event)" name="shippingMethod" id="toBranch" style="width:18px; height:18px;">
                                     </div>
                                  
                                 </div>
