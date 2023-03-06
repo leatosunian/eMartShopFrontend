@@ -361,8 +361,6 @@ export default {
     },
     methods: {
         selectShipMethod(price){
-			console.log(this.total);
-			console.log(this.shipMethods);
 
             if(price.target.value == this.shippingCost){
                 return
@@ -372,11 +370,6 @@ export default {
             }
             
             this.shipMethodSelected = price.target.id
-
-            console.log(this.shippingCost);
-			console.log(this.shipMethodSelected);
-
-
         },
 		selectShipMethodFree(e){
 			this.shipMethodSelected = e.target.id
